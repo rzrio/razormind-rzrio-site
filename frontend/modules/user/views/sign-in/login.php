@@ -12,143 +12,290 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-login">
     <h1><?php echo Html::encode($this->title) ?></h1>
 <style>
-    input,
-    textarea,
-    select {
-        border: 1px solid #111;
-        padding: 0.5em;
-        font-size: 15px;
-        line-height: 1.2em;
-        width: 80%;
-        background: #444;
-        color: #fff;
-        font-family: helvetica, sans-serif;
-        background: -webkit-gradient(linear, left top, left bottom, from(#222), to(#444));
-        -webkit-appearance: none;
-        /*box-shadow*/
-        -webkit-box-shadow: 1px 1px 1px #333;
-        -moz-box-shadow: 1px 1px 1px #333;
-        box-shadow: 1px 1px 1px #333;
-    }
-    input:focus,
-    textarea:focus,
-    select:focus { outline-color: #c00 }
-    textarea {
-        height: 55px;
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.05, #333));
-        background: -moz-gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.05, #333));
-        background: -o-gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.05, #333));
-        background: -ms-gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.05, #333));
-        background: gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.05, #333));
-    }
-    fieldset{
-        border:0;
-    }
-    select {
-        padding: 0.5em 1em 0.5em 0.75em;
-        background: #111;
-        /*background-size*/}
-    input[type=text] {
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #111), color-stop(0.12, #333));
-        background: -moz-gradient(linear, left top, left bottom, color-stop(0, #111), color-stop(0.12, #333));
-        background: -o-gradient(linear, left top, left bottom, color-stop(0, #111), color-stop(0.12, #333));
-        background: -ms-gradient(linear, left top, left bottom, color-stop(0, #111), color-stop(0.12, #333));
-        background:  gradient(linear, left top, left bottom, color-stop(0, #111), color-stop(0.12, #333));
-    }
-    input[type=submit] {
-        width: auto;
-        padding: 0.25em 1em;
-        line-height: 1.5em;
-        background: -webkit-gradient(linear, left top, left bottom, from(#a00), to(#600));
-        background: -moz-gradient(linear, left top, left bottom, from(#a00), to(#600));
-        background: -o-gradient(linear, left top, left bottom, from(#a00), to(#600));
-        background: -ms-gradient(linear, left top, left bottom, from(#a00), to(#600));
-        background: gradient(linear, left top, left bottom, from(#a00), to(#600));
-        border: 2px solid #c00;
-        text-shadow: 0 0 2px #300;
-        font-weight: bold;
-        /*box-shadow*/
-        -webkit-box-shadow: 1px 1px 3px #000;
-        -moz-box-shadow: 1px 1px 3px #000;
-        box-shadow: 1px 1px 3px #000;
-        margin-right: 0.5em;
-    }
-    input[type=reset] {
-        width: auto;
-        padding: 0.25em 1em;
-        line-height: 1.5em;
-        background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222));
-        background: -moz-gradient(linear, left top, left bottom, from(#333), to(#222));
-        background: -o-gradient(linear, left top, left bottom, from(#333), to(#222));
-        background: -ms-gradient(linear, left top, left bottom, from(#333), to(#222));
-        background: gradient(linear, left top, left bottom, from(#333), to(#222));
-        border: 2px solid #444;
-        text-shadow: 0 0 2px #300;
-        font-weight: bold;
-        color: #999;
-        /*box-shadow*/
-        -webkit-box-shadow: 1px 1px 3px #000;
-        -moz-box-shadow: 1px 1px 3px #000;
-        box-shadow: 1px 1px 3px #000;
-    }
-    input[type=checkbox],
-    input[type=radio] {
-        display: inline-block;
-        font-size: 15px;
-        line-height: 1em;
-        margin: 0 0.25em 0 0;
+    @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+    * {
+        box-sizing: border-box;
+        margin: 0;
         padding: 0;
-        width: 1.25em;
-        height: 1.25em;
-        /*border-radius*/
-        -webkit-border-radius: 0.25em;
-        -moz-border-radius: 0.25em;
-        border-radius: 0.25em;
-        vertical-align: text-top;
+        font-weight: 300;
     }
-    input[type=radio] {
-        /*border-radius*/
-        -webkit-border-radius: 2em;
-        -moz-border-radius: 2em;
-        border-radius: 2em;
+    body {
+        font-family: 'Source Sans Pro', sans-serif;
+        color: white;
+        font-weight: 300;
     }
-    input[type=checkbox]:checked {
-        background: #111;
-        /*background-size*/
+    body ::-webkit-input-placeholder {
+        /* WebKit browsers */
+        font-family: 'Source Sans Pro', sans-serif;
+        color: white;
+        font-weight: 300;
     }
-    input[type=radio]:checked {
-        /*background-size*/
-        -webkit-background-size: 28px 28px;
-        -moz-background-size: 28px 28px;
-        -o-background-size: 28px 28px;
-        background-size: 28px 28px;
+    body :-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        font-family: 'Source Sans Pro', sans-serif;
+        color: white;
+        opacity: 1;
+        font-weight: 300;
+    }
+    body ::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        font-family: 'Source Sans Pro', sans-serif;
+        color: white;
+        opacity: 1;
+        font-weight: 300;
+    }
+    body :-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        font-family: 'Source Sans Pro', sans-serif;
+        color: white;
+        font-weight: 300;
+    }
+    .wrapper {
+        background: #50a3a2;
+        background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+        background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 400px;
+        margin-top: -200px;
+        overflow: hidden;
+    }
+    .wrapper.form-success .container h1 {
+        -webkit-transform: translateY(85px);
+        -ms-transform: translateY(85px);
+        transform: translateY(85px);
+    }
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 80px 0;
+        height: 400px;
+        text-align: center;
+    }
+    .container h1 {
+        font-size: 40px;
+        -webkit-transition-duration: 1s;
+        transition-duration: 1s;
+        -webkit-transition-timing-function: ease-in-put;
+        transition-timing-function: ease-in-put;
+        font-weight: 200;
+    }
+    form {
+        padding: 20px 0;
+        position: relative;
+        z-index: 2;
+    }
+    form input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: 0;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 250px;
+        border-radius: 3px;
+        padding: 10px 15px;
+        margin: 0 auto 10px auto;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        color: white;
+        -webkit-transition-duration: 0.25s;
+        transition-duration: 0.25s;
+        font-weight: 300;
+    }
+    form input:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+    form input:focus {
+        background-color: white;
+        width: 300px;
+        color: #53e3a6;
+    }
+    form button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: 0;
+        background-color: white;
+        border: 0;
+        padding: 10px 15px;
+        color: #53e3a6;
+        border-radius: 3px;
+        width: 250px;
+        cursor: pointer;
+        font-size: 18px;
+        -webkit-transition-duration: 0.25s;
+        transition-duration: 0.25s;
+    }
+    form button:hover {
+        background-color: #f5f7f9;
+    }
+    .bg-bubbles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    .bg-bubbles li {
+        position: absolute;
+        list-style: none;
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.15);
+        bottom: -160px;
+        -webkit-animation: square 25s infinite;
+        animation: square 25s infinite;
+        -webkit-transition-timing-function: linear;
+        transition-timing-function: linear;
+    }
+    .bg-bubbles li:nth-child(1) {
+        left: 10%;
+    }
+    .bg-bubbles li:nth-child(2) {
+        left: 20%;
+        width: 80px;
+        height: 80px;
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+        -webkit-animation-duration: 17s;
+        animation-duration: 17s;
+    }
+    .bg-bubbles li:nth-child(3) {
+        left: 25%;
+        -webkit-animation-delay: 4s;
+        animation-delay: 4s;
+    }
+    .bg-bubbles li:nth-child(4) {
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        -webkit-animation-duration: 22s;
+        animation-duration: 22s;
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+    .bg-bubbles li:nth-child(5) {
+        left: 70%;
+    }
+    .bg-bubbles li:nth-child(6) {
+        left: 80%;
+        width: 120px;
+        height: 120px;
+        -webkit-animation-delay: 3s;
+        animation-delay: 3s;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    .bg-bubbles li:nth-child(7) {
+        left: 32%;
+        width: 160px;
+        height: 160px;
+        -webkit-animation-delay: 7s;
+        animation-delay: 7s;
+    }
+    .bg-bubbles li:nth-child(8) {
+        left: 55%;
+        width: 20px;
+        height: 20px;
+        -webkit-animation-delay: 15s;
+        animation-delay: 15s;
+        -webkit-animation-duration: 40s;
+        animation-duration: 40s;
+    }
+    .bg-bubbles li:nth-child(9) {
+        left: 25%;
+        width: 10px;
+        height: 10px;
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+        -webkit-animation-duration: 40s;
+        animation-duration: 40s;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    .bg-bubbles li:nth-child(10) {
+        left: 90%;
+        width: 160px;
+        height: 160px;
+        -webkit-animation-delay: 11s;
+        animation-delay: 11s;
+    }
+    @-webkit-keyframes square {
+        0% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+        100% {
+            -webkit-transform: translateY(-700px) rotate(600deg);
+            transform: translateY(-700px) rotate(600deg);
+        }
+    }
+    @keyframes square {
+        0% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+        100% {
+            -webkit-transform: translateY(-700px) rotate(600deg);
+            transform: translateY(-700px) rotate(600deg);
+        }
     }
 
 </style>
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
-                <?php echo $form->field($model, 'identity') ?>
-                <?php echo $form->field($model, 'password')->passwordInput() ?>
-                <?php echo $form->field($model, 'rememberMe')->checkbox() ?>
-                <div style="color:#999;margin:1em 0">
-                    <?php echo Yii::t('frontend', 'If you forgot your password you can reset it <a href="{link}">here</a>', [
-                        'link'=>yii\helpers\Url::to(['sign-in/request-password-reset'])
-                    ]) ?>
-                </div>
-                <div class="form-group">
-                    <?php echo Html::submitButton(Yii::t('frontend', 'Login'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
-                <div class="form-group">
-                    <?php echo Html::a(Yii::t('frontend', 'Need an account? Sign up.'), ['signup']) ?>
-                </div>
-                <h2><?php echo Yii::t('frontend', 'Log in with')  ?>:</h2>
-                <div class="form-group">
-                    <?php echo yii\authclient\widgets\AuthChoice::widget([
-                        'baseAuthUrl' => ['/user/sign-in/oauth']
-                    ]) ?>
-                </div>
+
+
+    <div class="wrapper">
+        <div class="container">
+            <h1>Welcome</h1>
+
+            <?php $form = ActiveForm::begin(['id' => 'login-form','class' => 'form']); ?>
+            <?php echo $form->field($model, 'identity') ?>
+            <?php echo $form->field($model, 'password')->passwordInput() ?>
+            <?php echo $form->field($model, 'rememberMe')->checkbox() ?>
+            <div style="color:#999;margin:1em 0">
+                <?php echo Yii::t('frontend', 'If you forgot your password you can reset it <a href="{link}">here</a>', [
+                    'link'=>yii\helpers\Url::to(['sign-in/request-password-reset'])
+                ]) ?>
+            </div>
+            <div class="form-group">
+                <?php echo Html::submitButton(Yii::t('frontend', 'Login'), ['id' => 'login-button', 'name' => 'login-button']) ?>
+            </div>
+            <div class="form-group">
+                <?php echo Html::a(Yii::t('frontend', 'Need an account? Sign up.'), ['signup']) ?>
+            </div>
+            <h2><?php echo Yii::t('frontend', 'Log in with')  ?>:</h2>
+            <div class="form-group">
+                <?php echo yii\authclient\widgets\AuthChoice::widget([
+                    'baseAuthUrl' => ['/user/sign-in/oauth']
+                ]) ?>
+            </div>
             <?php ActiveForm::end(); ?>
+
         </div>
+
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+
+
+
+
+
 </div>
