@@ -14,27 +14,6 @@ $this->title = "rzr.io"
 
 <div id=bodyWrapper class=body-wrapper>
     <!-- Landing page loading screen -->
-    <div id=initLoadingScreen class=init-loading-screen>
-        <div class=title>NOW LOADING</div>
-        <div class=init-loading-bar>
-            <div id=initProgressBar class=init-loading-progress></div>
-        </div>
-    </div>
-    <!-- Landing page intro animation -->
-    <div id=initIntroScreen class=init-intro-screen>
-        <div class=bar-top></div>
-        <div class=bar-bottom></div>
-        <div id=initIntroSubtitle class=subtitle>Bruno Quintela presents</div>
-        <div id=initIntroTitle class=title><p id=letteringTitle class=lettering-title>THIS FORM I HOLD NOW</p><span
-                id=introInfo class=intro-info>A realtime rendered webGL experiment</span></div>
-    </div>
-    <!-- Scene loading screen -->
-    <div id=modelLoadingScreen class=model-loading-screen>
-        <div id=loadingInfoTop class=loading-info-top>now loading 3D Model assets, please wait</div>
-        <div class=model-loading-bar>
-            <div id=progressBar class=model-loading-progress></div>
-        </div>
-    </div>
     <!-- Drag model info -->
     <div id=currentModelInfo class=current-model-info>
         <div id=contentPerformance class=content-performance>
