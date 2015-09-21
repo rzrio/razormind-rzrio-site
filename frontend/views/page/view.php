@@ -26,8 +26,7 @@ $this->title = $model->title;
             <li><a id=aboutBurguerItem href=#><?php echo $model->title ?></a></li>
         </ul>
     </nav>
-    <?php echo $model->title ?>
 
-<div class="content-info description">
+<div class="description">
 <?php echo $model->body ?>
     </div>
