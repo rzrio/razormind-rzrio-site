@@ -297,9 +297,9 @@ $this->title = "rzr.io"
 
 
 
-                                        <span class=settings-name>Username</span><span class=assets-label><?php echo $form->field($model, 'identity') ?></span>
-                                        <span class=settings-name>Password</span><span class=assets-label><?php echo $form->field($model, 'password')->passwordInput() ?></span>
-                                        <span class=settings-name>#polygons</span><span class=assets-label><?php echo Html::submitButton(Yii::t('frontend', 'Login'), ['id' => 'login-button', 'name' => 'login-button', 'class' => 'button button-load load-video', 'data-model' => '1']) ?></span>
+                                        <span class=settings-name><?php echo $form->field($model, 'identity') ?></span>
+                                        <span class=settings-name><?php echo $form->field($model, 'password')->passwordInput() ?></span>
+                                        <span class=settings-name><?php echo Html::submitButton(Yii::t('frontend', 'Login'), ['id' => 'login-button', 'name' => 'login-button', 'class' => 'button button-load load-video', 'data-model' => '1']) ?></span>
                                         <?php ActiveForm::end(); ?>
 
                                     </div>
