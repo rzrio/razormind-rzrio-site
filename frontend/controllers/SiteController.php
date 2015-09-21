@@ -4,7 +4,8 @@ namespace frontend\controllers;
 use Yii;
 use frontend\models\ContactForm;
 use yii\web\Controller;
-
+use common\models\User;
+use frontend\modules\user\models\LoginForm;
 /**
  * Site controller
  */
@@ -32,7 +33,19 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = new LoginForm();
+        if (Yii::$app->request->isAjax) {
+            $model->load($_POST);
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->goBack();
+        } else {
+            return $this->render('index', [
+                'model' => $model
+            ]);
+        }
     }
 
     public function actionContact()
