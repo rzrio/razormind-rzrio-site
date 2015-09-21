@@ -14,7 +14,7 @@ $this->beginContent('@frontend/views/layouts/base.php')
                 'options'=>ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'options'),
             ])?>
         <?php endif; ?>
-
+<div style="color: white;">
         <?php echo $content ?>
-
+</div>
 <?php $this->endContent() ?>
